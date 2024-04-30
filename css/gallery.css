@@ -1,0 +1,385 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #b93333;
+    align-content: center;color: white;
+    font-size: larger;
+    padding: 0rem 2rem 0rem 2rem;
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 1);
+    width: 100vw;
+    position: fixed;
+    z-index: 999;
+}
+
+.logo{
+    background-color: white;
+    padding: 0.5rem;
+}
+
+
+.header ul{
+    display: flex;
+    align-items: center;
+    justify-items: space-evenly;
+    list-style: none;
+    gap: 4rem;
+    padding: 1rem;
+    flex: 1;   
+}
+
+
+
+a{
+    text-decoration: none;
+    color: white;
+ }
+
+a:hover{
+    color: #b93333;
+    background-color: white;
+    padding: 1em 20%;
+    transition: background-color 0.5s;
+}
+
+.list{
+    display: none;
+}
+
+
+.navbar>ul>li:hover .list{
+    display: block;
+    position: absolute;
+    margin-left: -1.5rem;
+    margin-top: 1rem;
+    background-color:#b93333;
+    background: linear-gradient(rgba(185, 51, 51, 0.6), rgba(185, 51, 51, 0.7));   
+}
+
+.navbar>ul>li:hover .list ul{
+    display: block;
+    padding: 1rem; 
+}
+
+.list>ul>li{
+    padding: 0.5rem;
+    align-content: center;   
+}
+
+.list>ul>li>a{
+    padding: 1rem;
+    background-color: unset;
+    color: white;
+}
+
+.list>ul>li>a:hover{
+    color: white;
+}
+
+.sa{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-top: 22rem; 
+}
+
+.gallery1{
+    background-image: url(../img/ga3.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.gallery{
+    background-image: url(../gallery/sa1.jpg);
+    margin: 0 7rem 0 7rem;
+}
+
+#web-design{
+    padding: 7rem 0 3rem 0;
+    background-color: rgb(240, 240, 240);
+    color: #b93333; 
+}
+
+#web-design p{
+    padding-bottom: 1rem;
+}
+
+#web-design>ul{
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 2rem;
+    color: #b93333;
+    background-color: #b93333;
+    justify-content: space-evenly;
+    padding: 2rem;
+}
+
+#web-design>ul>li>a{
+    background-color: white;
+    color: #b93333;
+    padding: 1rem;
+}
+
+#web-design>ul>li>a:hover{
+    padding: 1rem;
+}
+
+#images{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 2rem;
+    margin: 1rem;
+    margin-bottom: -50rem;
+}
+    
+
+.img1{
+    box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.1), 0 7px 7px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+
+
+.img1:hover{
+    transform: scale(1.18);
+}
+
+#images>img{
+    margin-top: 3.5rem;
+    width: 100%;
+    height: 80%;
+}
+
+.t-shirt{
+    position: absolute;
+    text-align: center;
+    color: #b93333;
+    border-bottom: 1px double ;
+}
+
+#flyers{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 2rem;
+    margin: 1rem;
+    margin-top: 7rem;
+    margin-top: 58rem;
+}
+
+
+#flyers>img{
+    width: 100%;
+    height: 90%;
+}
+
+.fly{
+    position: absolute;
+    margin-top: -3rem;
+    text-align: center;
+    text-align: center;
+    color: #b93333;
+    border-bottom: 1px double ;
+}
+
+
+
+button {
+    border-radius: 5px;
+    background-color: #b93333;
+    font-weight: bolder;
+    color: white;
+    font-size: 15pt;
+    border: solid;
+    border-width: 1px;
+    border-color: white;
+    margin-top: 0.3rem;
+    padding: 0.5rem;
+    width: 26.5rem;
+}
+
+#flyers>img:hover{
+    transform: scale3d(200px); 
+}
+
+
+input{
+    width: 25rem;
+    padding: 0.7rem;
+    margin-top: 15px;
+}
+
+.infor{
+    background-color: #b93333;
+    justify-content: center;
+    padding: 2rem;
+    width: auto;
+    line-height: 2rem;
+    color: white;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+    
+}
+
+.infor .icon{
+    font-size: 20pt;
+    column-gap: 100px;
+    padding: 1rem;
+    margin-left: -1rem;
+}
+
+.infor .icon:hover{
+    color: #000000;
+}
+    
+
+.sponsors{
+    line-height: 2.4rem;
+}
+
+li{
+    list-style: none;
+    text-align: left;
+}
+
+.message{
+    text-align: center;  
+}
+
+input{
+    width: fit-content;
+    border-radius: 7px;
+}
+.subject{
+    width: 23rem;
+}
+
+textarea{
+    margin-top: 1em;
+    width: 24.5rem;
+    border-radius: 7px;
+    
+}
+.submit{
+    width: 100px;
+    border-radius: 15px;
+    background-color: #b93333;
+    font-weight: bolder;
+    color: white;
+    font-size: 10pt;
+    padding: 0.7rem;
+    border: solid;
+    border-width: 1px;
+    border-color: white;
+
+}
+
+.submit:hover{
+    transform: scale(1.02);
+    box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.8), 0 7px 7px 0 rgba(0, 0, 0, 0.8);
+    color: #b93333;
+    background-color: white;
+}
+
+.footer{
+    background-color: #b93333;
+    color: white;
+    text-align: center;
+    border-top: solid;
+    border-color: white;
+    border-top-width: 1px;
+    padding: 1rem;
+}
+
+@media (min-width: 375px) and (max-width: 480px){
+    .header ul { 
+        display: none;
+    }
+
+    .workDays{ 
+        display: none;
+
+    }
+
+    .logo{
+        margin: 0;
+        padding: 0;
+        margin-left: -10rem;
+}
+
+
+.gallery{
+    background-image: url(/gallery/sa1.jpg);
+    margin: 0;
+}
+       
+    button {
+        padding: 0.5rem;
+        width: 16rem;
+    }
+    
+    .subscribe{
+        margin-top: 1rem;
+    }
+    
+    #subscribe{
+        width: 14.5rem;
+        padding: 0.7rem;
+        margin-top: 15px;  
+    }
+    
+    
+    /* text area */
+    
+    input{
+        width: 15rem;
+        border-radius: 7px;
+        border: none;
+    }
+    
+    .subject{
+        width: 15rem;
+    }
+    
+    textarea{
+        margin-top: 1em;
+        width: 16.5rem;
+        height: 5rem;
+        border-radius: 7px;
+    }
+    
+    }
+
+
+    @media (min-width: 481px) and (max-width: 1200px){
+
+        .header ul{ 
+            display: none;
+            font-size: 1.5rem;
+            gap: 0.rem;
+        }
+    
+        .workDays{ 
+            display: none; 
+        }
+
+        .logo{
+             margin-left: -15rem;
+    }
+    
+    }    
+
+
+

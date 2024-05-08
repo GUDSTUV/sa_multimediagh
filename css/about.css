@@ -1,112 +1,115 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr 0.fr;
+}
+
+.header_main {
+    background-color: #b93333;
+    height:2rem;
 }
 
 body{
     background-image: url(../img/dark.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.header{
+.header {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    flex: 1;
     justify-content: space-evenly;
-    align-items: center;
-    background-color: #b93333;
-    color: white;
-    font-size: larger;
-    padding: 0rem 2rem 0rem 2rem;
-    box-shadow: 0px 5px 10px rgb(0, 0, 0);
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 1);
-    width: 100vw;
+    align-content: center;
     position: fixed;
+    background-color: #b93333;
+    font-size: larger;
+    padding: 1rem;
+    width: 100%;
+    box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.8);
     z-index: 999;
 }
 
-.logo{
-    background-color: white;
-    padding: 0.5rem;
-}
-
-
-.header ul{
+.navbar ul {
     display: flex;
-    justify-items: space-around;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
     list-style: none;
-    gap: 4rem;
-    padding: 1rem;  
+    margin-top: 0.5rem;
 }
 
-a{
+.navbar ul a {
     text-decoration: none;
     color: white;
+    padding: 1rem;
 }
 
-a:hover{
-    color: #b93333;
+.navbar>ul a:hover {
     background-color: white;
-    padding: 1em 20%;
+    color: #b93333;
 }
 
-.workDays{
-    padding-right: 3rem;
+.logo {
+    background-color: white;
 }
 
+.workDays {
+    margin-top: 0.5rem;
+    color: white;
+    width: 12rem;
+}
 
-
-.list{
+.list {
     display: none;
 }
 
-
-.navbar>ul>li:hover .list{
+.navbar>ul>li:hover .list {
     display: block;
     position: absolute;
     margin-left: -1.5rem;
     margin-top: 1rem;
-    background-color:#b93333;
-    background: linear-gradient(rgba(185, 51, 51, 0.6), rgba(185, 51, 51, 0.7));  
+    background-color: #b93333;
+    background: linear-gradient(rgba(185, 51, 51, 0.6), rgba(185, 51, 51, 0.7));
 }
 
-.navbar>ul>li:hover .list ul{
+.navbar>ul>li:hover .list>ul {
     display: block;
-    padding: 1rem; 
 }
 
-.list>ul>li{
+.list>ul>li {
     padding: 0.5rem;
-    align-content: center;   
+    align-content: center;
 }
 
-.list>ul>li>a{
-    padding: 1rem;
+.list ul li a:hover {
     background-color: unset;
     color: white;
 }
 
-.list>ul>li>a:hover{
-    color: white;
-}
-
-.sa{
-    color: rgb(255, 255, 255);
-    text-align: center;
-    padding-top: 22rem; 
-}
-
-.banner{
-    height: 40rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)), url(../img/banner.jpg);
+.banner_2 {
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(22, 22, 22, 0.8)), url(../img/4.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    width: auto;
-    overflow-wrap: break-word   
+    height: 100vh;
+    margin-top: -2rem;
 }
 
+.banner_2 h2 {
+    color: brown;
+    padding: 17rem 0 0 5rem;
+    text-decoration: underline;
+    font-weight: bolder;
+    font-size: 2.5rem;
+    font-family: Gilroy;
+    text-transform: uppercase;
+}
 
-
-  
 .lorem{
     display: inline-block;
     color: #ffffff;
@@ -117,35 +120,12 @@ a:hover{
     margin: 2rem 0 0 3rem;
     padding: 1.5rem 1.5rem 1.5rem 2rem;
     border-radius: 5px;
-    overflow: hidden;   
 }
-
-.banner_2 h2{
-    color: brown;
-    padding: 17rem 0 0 5rem; 
-    text-decoration: underline;
-    font-weight: bolder;
-    font-size: 2.5rem;
-    font-family: Gilroy;
-    text-transform: uppercase;
-    position: sticky;
-    text-overflow: hidden;
-}
-
-.banner_2{
-    background: linear-gradient(rgba(255, 255, 255, 0), rgba(22, 22, 22, 0.8)), url(../img/4.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-}
-
 
 .values{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));     
-        justify-content: space-between;
-        margin: 2rem;
-        margin-top: -7rem;   
+        display: flex;  
+        justify-content: center;
+        margin-top: -7rem;
 }
 
 .branch,.staff,.mission,.core_values{
@@ -168,17 +148,15 @@ a:hover{
 
 .ruler{
     display: flex;
-    margin-top: -5rem;
     justify-content: center;
-    
 }
 
 .ruler1, .ruler2, .ruler3{
     display: flex;
-    flex-direction: row;
+    justify-content: space-around;
     background-color: red;
     padding: 0.2rem;
-    width: 30rem;
+    width: 18rem;
 }
 
 .ruler2{
@@ -191,7 +169,6 @@ a:hover{
 
 .workers{
     padding: 5rem;
-    background-color: #dfdfdf;
     background-image: url(../img/sa1.jpg);
 }
 
@@ -201,12 +178,12 @@ a:hover{
     padding: 1rem;
 }
 
-
 .founder{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
     column-gap: 5em;
-    align-items: center;
     margin: 1rem 0 -3rem 0; 
     background-color: rgb(238, 238, 238); 
     padding: 1rem; 
@@ -232,335 +209,87 @@ a:hover{
     color: white;
     text-transform: uppercase;
     font-size: medium;
-    
 }
 
-
- button {
-    
-    border-radius: 5px;
+.infor {
     background-color: #b93333;
-    font-weight: bolder;
-    color: white;
-    font-size: 15pt;
-    border: solid;
-    border-width: 1px;
-    border-color: white;
-    margin-top: 0.3rem;
-    padding: 0.5rem;
-    width: 26.5rem;
-
-}
-
-
-
-
-input{
-    width: 25rem;
-    padding: 0.7rem;
-    margin-top: 15px;
-}
-
-.infor{
-    background-color: #b93333;
-    justify-content: center;
-    padding: 2rem;
-    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    padding: 4rem;
     line-height: 2rem;
     color: white;
-    display: flex;
-    flex-flow: row wrap;
     gap: 3rem;
-    
 }
 
-.infor .icon{
+.infor .icon {
     font-size: 20pt;
     column-gap: 100px;
     padding: 1rem;
     margin-left: -1rem;
 }
 
-.infor .icon:hover{
+.infor .icon:hover {
     color: #000000;
-
 }
-    
 
-.sponsors{
+.sponsors {
     line-height: 2.4rem;
-    
 }
 
-li{
+li {
     list-style: none;
-    text-align: left; 
-
-   
+    text-align: left;
 }
 
-.message{
+.message {
     text-align: center;
-   
-    
-}
-input{
-    width: fit-content;
-    border-radius: 7px;
-}
-.subject{
-    width: 23rem;
 }
 
-textarea{
-    margin-top: 1em;
-    width: 24.5rem;
+input {
+    padding: 0.7rem;
+    margin-top: 15px;
     border-radius: 7px;
-    
+    border: none;
 }
-.submit{
+
+.subject,
+textarea {
+    width: 24rem;
+    border-radius: 7px;
+    margin-top: 1em;
+    border: none;
+}
+
+textarea {
+    height: 5rem;
+    width: 24.5rem;
+}
+
+.submit {
     width: 100px;
     border-radius: 15px;
     background-color: #b93333;
     font-weight: bolder;
     color: white;
-    font-size: 10pt;
-    padding: 0.7rem;
-    border: solid;
-    border-width: 1px;
-    border-color: white;
-
+    border: 1px solid white;
 }
 
-.submit:hover{
+.submit:hover {
     transform: scale(1.02);
-    box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.8), 0 7px 7px 0 rgba(0, 0, 0, 0.8);
+    box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.2), 0 7px 7px 0 rgba(0, 0, 0, 0.2);
     color: #b93333;
     background-color: white;
 }
 
-.footer{
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #b93333;
     color: white;
     text-align: center;
-    border-top: solid;
-    border-color: white;
-    border-top-width: 1px;
+    border-top: 1px solid white;
     padding: 1rem;
 }
-
-
-
-/* phone view */
-
-@media (min-width: 319px) and (max-width: 480px){
-    
-    .header ul { 
-        display: none;
-    }
-
-    .workDays{ 
-        display: none;
-
-    }
-
-    .logo{
-        margin: 0;
-        padding: 0;
-        margin-left: -10rem;
-}
-
-  
-.lorem{
-    display: none;
-}
-
-.value h1{
-    font-size: small;
-    padding-right: 0;
-}
-
-.value p{
-    display: none;
-}
-
-.banner_2 h2{
-    padding: 10rem 0 0 1rem; 
-}
-
-.banner_2{
-    height: 50vh;
-}
-
-
-.values{ 
-    margin: 00.5rem 0.5rem  2rem 0.5rem ;
-    margin-top: -2rem; 
-}
-
-.branch,.staff,.mission,.core_values{
-    margin: 0.2rem;
-    padding: 0.5rem;
-}
-
-
-.founder img{
-    width: 8rem;
-    height: 8rem;
-}
-
-
-.founder{
-    column-gap: 10rem;
-    
-}
-
-
-.manager{
-
-    padding: 2rem;
-}
-
-
- button {
-    padding: 0.5rem;
-    width: 16rem;
-}
-
-.subscribe{
-    margin-top: 1rem;  
-}
-
-#subscribe{
-    width: 14.5rem;
-    padding: 0.7rem;
-    margin-top: 15px;  
-}
-
-
-/* text area */
-
-input{
-    width: 15rem;
-    border-radius: 7px;
-    border: none;
-}
-
-.subject{
-    width: 15rem;
-}
-
-textarea{
-    margin-top: 1em;
-    width: 16.5rem;
-    height: 5rem;
-    border-radius: 7px;
-}
-
-}
-
-
-/* tablets and ipad */
-
-@media (min-width: 481px) and (max-width: 1200px){
-
-    .header ul { 
-        display: none;
-    }
-
-    .workDays{ 
-        display: none;
-
-    }
-
-    .logo{
-        margin: 0;
-        padding: 0;
-        margin-left: -10rem;
-}
-
-  
-.lorem{
-    margin: -1.8rem 0 0 -1rem;
-    font-size: small;
-    line-height: normal;
-    font-family: sans-serif;
-}
-
-.value h1{
-    font-size: small;
-    padding-right: 0;
-}
-
-.value p{
-    display: none;
-}
-
-.banner_2 h2{
-    padding: 10rem 0 0 1rem; 
-}
-
-.banner_2{
-    height: 50vh;
-}
-
-
-.values{ 
-        margin: 00.5rem 0.5rem  2rem 0.5rem ;
-        margin-top: -2rem; 
-}
-
-.branch,.staff,.mission,.core_values{
-    margin: 0.2rem;
-    padding: 0.5rem;
-}
-
-.founder{
-    column-gap: 10rem;
-    
-}
-
-.founder{
-
-    column-gap: 10rem;
-  
-}
-
- button {
-    padding: 0.5rem;
-    width: 16rem;
-}
-
-.subscribe{
-   
-    margin-top: 1rem; }
-
-#subscribe{
-    width: 14.5rem;
-    padding: 0.7rem;
-    margin-top: 15px;  
-}
-
-
-/* text area */
-
-input{
-    width: 15rem;
-    border-radius: 7px;
-    border: none;
-}
-
-.subject{
-    width: 15rem;
-}
-
-textarea{
-    margin-top: 1em;
-    width: 16.5rem;
-    height: 5rem;
-    border-radius: 7px;
-    
-}
-
-}
-

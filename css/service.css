@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -8,85 +9,87 @@ body{
     background-position: cover;
 }
 
-.header{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+.container {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr 0.1fr 1fr 1fr fr;
+}
+
+.header_main {
     background-color: #b93333;
-    color: white;
-    font-size: larger;
-    padding: 0rem 2rem 0rem 2rem;
-    box-shadow: 0px 5px 10px rgb(0, 0, 0);
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 1);
-    width: 100vw;
+    height: 2rem;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    justify-content: space-evenly;
+    align-content: center;
     position: fixed;
+    background-color: #b93333;
+    font-size: larger;
+    padding: 1rem;
+    width: 100%;
+    box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.8);
     z-index: 999;
 }
 
-.logo{
-    background-color: white;
-    padding: 0.5rem;
-}
 
-
-.header ul{
+.navbar ul {
     display: flex;
-    justify-items: space-around;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
     list-style: none;
-    gap: 4rem;
-    padding: 1rem;  
+    margin-top: 0.5rem;
 }
 
-a{
+.navbar ul a {
     text-decoration: none;
     color: white;
+    padding: 1rem;
 }
 
-a:hover{
-    color: #b93333;
+.navbar>ul a:hover {
     background-color: white;
-    padding: 1em 20%;
+    color: #b93333;
 }
 
-.workDays{
-    padding-right: 3rem;
+.logo {
+    background-color: white;
 }
 
+.workDays {
+    margin-top: 0.5rem;
+    color: white;
+    width: 12rem;
+}
 
-.list{
+.list {
     display: none;
 }
 
-
-.navbar>ul>li:hover .list{
+.navbar>ul>li:hover .list {
     display: block;
     position: absolute;
     margin-left: -1.5rem;
     margin-top: 1rem;
-    background-color:#b93333;
-    background: linear-gradient(rgba(185, 51, 51, 0.6), rgba(185, 51, 51, 0.7));  
+    background-color: #b93333;
+    background: linear-gradient(rgba(185, 51, 51, 0.6), rgba(185, 51, 51, 0.7));
 }
 
-.navbar>ul>li:hover .list ul{
+.navbar>ul>li:hover .list>ul {
     display: block;
-    padding: 1rem;
 }
 
-.list>ul>li{
+
+.list>ul>li {
     padding: 0.5rem;
-    align-content: center;   
+    align-content: center;
 }
 
-.list>ul>li>a{
-    padding: 1rem;
+.list ul li a:hover {
     background-color: unset;
-    color: white;
-  
-}
-
-.list>ul>li>a:hover{
     color: white;
 }
 
@@ -96,27 +99,19 @@ a:hover{
     padding-top: 22rem; 
 }
 
-.banner{
-    height: 40rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1)), url(../img/banner.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: auto;
-    overflow-wrap: break-word   
-}
 
 .banner_2{
     background: linear-gradient(rgba(255, 255, 255, 0), rgba(22, 22, 22, 0.8)), url(../img/aa.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
 }
 
 
  .slider {
     overflow: hidden;
     width: 100%;
-    height: 40rem;
+    height: 100%;
     position: relative;
   } 
   
@@ -129,7 +124,6 @@ a:hover{
     background-size: cover;
     background-position: center;
     animation: slide 50s infinite;
-    
   }
   
   .slider .slide:nth-child(1) {
@@ -157,8 +151,6 @@ a:hover{
     animation-delay: -45s;
 }
 
-
-  
   @keyframes slide {
     0%, 15%, 100% {
       transform: translateX(0);
@@ -171,23 +163,22 @@ a:hover{
     95% {
       transform: translateX(100%);
       animation-timing-function: ease;
-
 }
   }
 
 .service{
     text-align: center;
+    /* margin: 0 3rem; */
     color: rgb(0, 0, 0);
     padding: 2rem;
     padding-top: 0.5rem;
-    margin: 5rem 5rem 10rem 5rem;
-    margin-top: -4rem;
+    margin-top: -9rem;
     background: white;
     border-top: 5px solid #b93333;
-    position: absolute;
+    z-index: 888;
+    position: relative;
     box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.8), 0 7px 7px 0 rgba(0, 0, 0, 0.8);
 }
-
 
 .service h1{
     font-size: 2rem;
@@ -208,29 +199,30 @@ h4{
 .main{
     background-color: rgb(255, 255, 255);
     background: url(../img/dark.jpg);
-   background-attachment: fixed;
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-color: #b93333;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #b93333;
+    margin-top: -8rem;
 }
 
 .main1{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     background-color: rgb(238, 238, 238);
-    align-items: center;
-    display: grid;
+    align-content: center;
     grid-template-columns: repeat(2, 1fr);
     margin: 8rem 2rem 2rem 2rem ;
     overflow: hidden;
-}
-
-.main img{
-    margin-top: -20rem;
 }
 
 .web-design, .hosting, .maintenance1, .sHosting{
     background-color: white;
     border-radius: 5px;
     padding: 30px;
+    width: 15rem;
     box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.1), 0 7px 7px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -263,16 +255,14 @@ h4{
     margin-top: 5px;
 }
 
-
 .other-service{
     text-align: center;
     padding: 2rem;
     color: #b93333;
     background-color: rgb(245, 245, 245);
     border-radius: 10px;
-    margin-top: 5px;
     position: absolute;
-    margin: 29rem 8rem 10rem 10rem;
+    margin: 22rem 0 0 -30rem;
     line-height: 2rem;
     list-style-type: circle;
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
@@ -307,7 +297,6 @@ h4{
     margin: 2rem;
 }
 
-
 .class{
     background-color: white;
     padding: 2rem;
@@ -336,7 +325,6 @@ h4{
 
 .courses{
     gap: 2rem;
-
 }
 
 .courses h1{
@@ -355,7 +343,6 @@ h4{
 .ruler{
     display: flex;
     justify-content: left;
-    
 }
 
 .ruler1, .ruler2, .ruler3{
@@ -390,7 +377,6 @@ button {
     margin-top: 0.3rem;
     padding: 0.5rem;
     width: 26.5rem;
-
 }
 
 input{
@@ -399,399 +385,192 @@ input{
     margin-top: 15px;
 }
 
-.infor{
+.infor {
     background-color: #b93333;
-    justify-content: center;
-    padding: 2rem;
-    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    padding: 4rem;
     line-height: 2rem;
     color: white;
-    display: flex;
-    flex-flow: row wrap;
-    gap: 3rem;   
+    gap: 3rem;
 }
 
-.infor .icon{
+.infor .icon {
     font-size: 20pt;
     column-gap: 100px;
     padding: 1rem;
     margin-left: -1rem;
 }
 
-.infor .icon:hover{
+.infor .icon:hover {
     color: #000000;
 }
 
-.sponsors{
-    line-height: 2.4rem; 
+.sponsors {
+    line-height: 2.4rem;
 }
 
-li{
+li {
     list-style: none;
-    text-align: left; 
+    text-align: left;
 }
 
-.message{
-    text-align: center;   
+.message {
+    text-align: center;
 }
 
-input{
+input {
     width: fit-content;
     border-radius: 7px;
-}
-.subject{
-    width: 23rem;
+    border: none;
 }
 
-textarea{
-    margin-top: 1em;
-    width: 24.5rem;
+.subject,
+textarea {
+    width: 24rem;
     border-radius: 7px;
-    
+    margin-top: 1em;
+    border: none;
 }
-.submit{
+
+textarea {
+    height: 5rem;
+}
+
+.submit {
     width: 100px;
     border-radius: 15px;
     background-color: #b93333;
     font-weight: bolder;
     color: white;
-    font-size: 10pt;
-    padding: 0.7rem;
-    border: solid;
-    border-width: 1px;
-    border-color: white;
+    border: 1px solid white;
 }
 
-.submit:hover{
+.submit:hover {
     transform: scale(1.02);
-    box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.8), 0 7px 7px 0 rgba(0, 0, 0, 0.8);
+    box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.2), 0 7px 7px 0 rgba(0, 0, 0, 0.2);
     color: #b93333;
     background-color: white;
+
 }
 
-.footer{
+.footer {
     background-color: #b93333;
     color: white;
     text-align: center;
-    border-top: solid;
-    border-color: white;
-    border-top-width: 1px;
-    padding: 1re
-}
-
-@media (min-width: 375px) and (max-width: 480px){
-    
-    .header ul { 
-        display: none;
-    }
-
-    .workDays{ 
-        display: none;
-    }
-
-    .logo{
-        margin: 0;
-        padding: 0;
-        margin-left: -10rem;
-}
-
-  
-.banner_2{
-    height: 40vh;    
+    border-top: 1px solid white;
+    padding: 1rem;
 }
 
 
- .slider {
-    width: 100%;
-    height: 20rem;
-    position: relative;
-  } 
-  
-  .service{
-    margin-top: -4rem;
-    position: relative; 
-}
+/* phone view */
 
-.service p{
-    display: none;
-}
+@media (min-width: 319px) and (max-width: 576px) {
 
-.service h1{
-    font-size: 1.5rem;
-}
-
-h4{
-    color: #000000;
-    padding-top: 5px;
-}
-
-/* mainpage */
-
-.main{
-   margin-top: -2rem;
-}
-
-.main1{
-    display: block;
-}
-
-.main img{
-    margin-top: -1rem;
-    height: 100%;
-    width: 100%;
-}
-
-.web-design, .hosting, .maintenance1, .sHosting{
-    margin-bottom: 1rem;
-}
-
-.web-services{
-    display: block;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    padding: 2rem;
-}
-
-
-.other-service{
-    margin: -13rem 5rem 1rem 13rem;
-    padding: 0;
-   }
-
-.other-service h1{
-    padding-bottom: 1rem;
-    font-weight: bolder;
-}
-
-.other-service li{
-   display: none;
-}
+        .other-service {
+                margin: 2rem 0 0 25rem;
+               
+            }
+        
+        
+            .other-service li {
+                display: none;
+            }
 
 .course-outline{
     display: grid;
     grid-template-columns: repeat(1, minmax(200px,1fr));
-}
-
-
-.courses img{
-    width: 50%;
-    height: 6rem;
-}
-
-.courses p{
-    padding: 1rem;
-}
-
-.courses{
     gap: 2rem;
+    place-items: center;
 }
 
-.courses h1{
-    color: #b93333;
-    text-align: center;
-}
-
-#bt{
-    width: 100%;
-}
-
-
- button {
-    padding: 0.5rem;
-    width: 16rem;
-}
-
-.subscribe{
-    margin-top: 1rem;    
-}
-
-#subscribe{
-    width: 14.5rem;
-    padding: 0.7rem;
-    margin-top: 15px;  
-}
-
-
-/* text area */
-
-input{
-    width: 15rem;
-    border-radius: 7px;
-    border: none;
-}
-
-.subject{
-    width: 15rem;
-}
-
-textarea{
-    margin-top: 1em;
-    width: 16.5rem;
-    height: 5rem;
-    border-radius: 7px;
-    
-}
+.class{
+    width: 20rem;
+} 
 
 }
 
 
+@media (min-width: 577px) and (max-width: 768px) {
 
-@media (min-width: 481px) and (max-width: 1200px){
-    
-    .header ul { 
-        display: none;
-    }
-
-    .workDays{ 
-        display: none;
+    .other-service {
+        margin: 2rem 0 0 25rem;
 
     }
 
-    .logo{
-        margin: 0;
-        padding: 0;
-        margin-left: -10rem;
+    .other-service li {
+        display: none;
+    }
+
+    .course-outline {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        place-items: center;
+    }
+
+    .class {
+        width: 17.5rem;
+    }
 }
 
-  
-.banner_2{
-    height: 40vh;    
-}
+@media (min-width: 769px) and (max-width: 992px) {
+
+    .other-service {
+        margin: 2rem 0 0 20rem;
+    }
+
+    .other-service li {
+        display: none;
+    }
+
+    .course-outline {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        place-items: center;
+    }
 
 
- .slider {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  } 
-  
-  .service{
-    margin-top: -4rem;
-    position: relative;
-}
-
-
-.service h1{
-    font-size: 1.5rem;
-}
-
-h4{
-    color: #b93333;
-    padding-top: 5px;
-}
-
-/* mainpage */
-
-.main{
-   margin-top: -2rem;
-}
-
-.main1{
-    display: block;
+    .class {
+        width: 20rem;
+    }
 
 }
 
-.main img{
-    margin-top: -3rem;
-    height: 100%;
-    width: 100%;
+
+@media (min-width: 993px) and (max-width: 1023px) {
+
+    .other-service {
+        margin: 2rem 0 0 20rem;
+    }
+
+    .other-service li {
+        display: none;
+    }
+
+    .course-outline {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        place-items: center;
+    }
+
+    .class {
+        width: 20rem;
+    }
 }
 
-.web-design, .hosting, .maintenance1, .sHosting{
-    margin-bottom: 1rem;
-}
-
-.web-services{
-    display: block;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    padding: 2rem;
-  }
-
-
-.other-service{
-    margin: -15rem 4rem 1rem 14rem;
-    padding: 2rem;
-    font-weight: bolder;
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
-   }
-
-.other-service h1{
-    padding-bottom: 1rem;
-    font-weight: bolder;
-}
-
-.other-service li{
-   /* display: none; */
-   line-height: 1.2rem;
-}
-
-.course-outline{
-    display: grid;
-    grid-template-columns: repeat(1, minmax(200px,1fr));
+@media (min-width: 1024px) and (max-width: 1251px) {
+    .other-service {
+            margin: 2rem 0 0 20rem;
+        }
+    
+        .other-service li {
+            display: none;
+        }
 }
 
 
-.courses img{
-    width: 50%;
-    height: 15rem;
-}
-
-.courses p{
-    padding: 1rem;
-}
-
-.courses{
-    gap: 2rem;
-
-}
-
-.courses h1{
-    color: #b93333;
-    text-align: center;
-}
-
-#bt{
-    width: 100%;
-}
 
 
- button {
-    padding: 0rem;
-    width: 16rem;
-
-}
-
-.subscribe{
-   
-    margin-top: 1rem;
-}
-
-#subscribe{
-    width: 14.5rem;
-    padding: 0.7rem;
-    margin-top: 15px;  
-}
-
-
-/* text area */
-
-input{
-    width: 15rem;
-    border-radius: 7px;
-    border: none;
-}
-
-.subject{
-    width: 15rem;
-}
-
-textarea{
-    margin-top: 1em;
-    width: 16.5rem;
-    height: 5rem;
-    border-radius: 7px;
-}
-
-}
 
